@@ -6,7 +6,6 @@ var homePage = function(world){
     _this.world = world;
     _this.marker = 'profilePage';
 
-    // _this.url = 'https://git.epam.com/';
     _this.url = 'https://git.epam.com/profile';
 
     _this._data = {
