@@ -15,6 +15,10 @@ var filePage = function(world){
       description: {
           css: '.file-content p',
           isSingle: true
+      },
+      text: {
+        css: '.line',
+        isSingle: true
       }
     }
   };

@@ -19,6 +19,11 @@ var homePage = function(world) {
 				css: '.project-name',
 				isSingle: false
 
+			},
+
+			searchForm: {
+				css: '#search',
+				isSingle: true
 			}
 		}
 	};
@@ -41,6 +46,13 @@ var homePage = function(world) {
 				});
 			});
 	};
+
+	_this.performSearch = function(projectName) {
+		return _this.world.helper.elementGetter(_this._root, _this._data.elements["searchForm"]).sendKeys(projectName)
+			.then(() => {
+				return browser.actions().sendKeys(protractor.Key.ENTER).perform();
+			})
+	}
 
 };
 

@@ -23,6 +23,20 @@ var newIssuePage = function(world){
     }
   };
 
+  _this.clickOn = function(elementName){
+    return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root,_this._data.elements[elementName])), 5000)
+      .then(()=>{
+        return _this.world.helper.elementGetter(_this._root,_this._data.elements[elementName]).click()
+      });
+  };
+
+  _this.fillField = function(fieldName, value) {
+    return _this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName]).scrollIntoView()
+      .then(element => {
+        return _this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName]).sendKeys(value);
+        });
+  };
+
 };
 
 inheritance.inherits(Page, newIssuePage);
