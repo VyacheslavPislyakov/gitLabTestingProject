@@ -1,7 +1,7 @@
 var profilePage = require('./profilePage');
 var homePage = require('./homePage');
 var newProjectPage = require('./newProjectPage');
-var projectPage = require('./projectPage');
+var projectPage = require('./projectPage')
 
 
 var PageFactory = function(world){

@@ -18,7 +18,7 @@ var homePage = function(world) {
 			projectName: {
 				css: '.project-name',
 				isSingle: false
-			}
+			},
 			accountLink: {
 				css: '.navbar__account',
 				text: 'My account',
