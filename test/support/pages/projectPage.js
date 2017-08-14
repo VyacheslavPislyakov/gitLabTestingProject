@@ -27,6 +27,11 @@ var projectPage = function(world){
       removeProjectButton: {
         css: '.btn-remove',
         isSingle: true
+      },
+      readmeLink: {
+        css: 'a.underlined-link',
+        text: 'README',
+        isSingle: true
       }
    }
   };
@@ -59,6 +64,15 @@ var projectPage = function(world){
       browser.switchTo().alert().accept();
       });
   };
+
+  _this.clickOn = function(elementName){
+    return browser.wait(EC.presenceOf(_this.world.helper.elementGetter(_this._root,_this._data.elements[elementName])), 10000)
+      .then(()=>{
+        return _this.world.helper.elementGetter(_this._root,_this._data.elements[elementName]).click();
+      });
+  };
+
+
 };
 
 inheritance.inherits(Page,projectPage);

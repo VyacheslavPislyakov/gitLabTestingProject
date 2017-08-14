@@ -18,7 +18,7 @@ var homePage = function(world) {
 			projectName: {
 				css: '.project-name',
 				isSingle: false
-			}
+			},
 			accountLink: {
 				css: '.navbar__account',
 				text: 'My account',
@@ -39,12 +39,16 @@ var homePage = function(world) {
 			searchButton: {
 				css: 'button.button.button--icon',
 				isSingle: true
+			},
+			testProject: {
+				css: 'a.project[href="/Volha_Bibik/testProject"]',
+				isSingle: false
 			}
 		}
 	};
 
 	_this.clickOn = function(elementName) {
-		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), 5000)
+		return browser.wait(EC.presenceOf(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), 10000)
 			.then(() => {
 				_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName]).click();
 			});

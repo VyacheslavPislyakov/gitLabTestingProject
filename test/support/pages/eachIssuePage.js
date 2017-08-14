@@ -22,4 +22,4 @@ var eachIssuePage = function(world){
 };
 
 inheritance.inherits(Page, eachIssuePage);
-module.exports = issuesPage;
+module.exports = eachIssuePage;

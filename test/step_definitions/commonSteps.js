@@ -23,4 +23,8 @@ defineSupportCode(function({Given,When,Then}) {
 		return this.pageFactory.getPage(pageName);
 	});
 
+	Then(/^I check '([^']*)' equal '([^']*)'$/, function(fieldName, value) {
+		return this.pageFactory.currentPage.checkValueOfTheElement(fieldName, value);
+	});
+
 });
