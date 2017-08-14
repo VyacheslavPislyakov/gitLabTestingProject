@@ -7,6 +7,11 @@ var homePage = require('./homePage'),
     newFilePage = require('./newFilePage'),
     filePage = require('./filePage');
 
+var newProjectPage = require('./newProjectPage');
+var projectPage = require('./projectPage');
+    loginPage = require('./loginPage');
+
+
 var PageFactory = function(world){
 
     var _this = this;
@@ -22,7 +27,10 @@ var PageFactory = function(world){
             'eachIssue' : eachIssuePage,
             'repositore' : repositorePage,
             'newFile' : newFilePage,
-            'file' : filePage
+            'file' : filePage,
+            'new-project': newProjectPage,
+            'project': projectPage
+
         };
         if(!pages[page]){
             throw new Error('Wrong page name: '+pages[page]);

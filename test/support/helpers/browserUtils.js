@@ -7,14 +7,18 @@ var BrowserUtils = function(world){
         return browser.executeScript('window.localStorage.clear();');
     };
     _this.navigateTo = function(page){
-      world.pageFactory.getPage(page);
-        return browser.get(browser.baseUrl);
+        // world.pageFactory.getPage(page);
+        // return browser.get(_this.url)
+
+        _this.data = curPage = world.pageFactory.getPage(page);
+        return browser.get(_this.data.url);
+
     };
 
     _this.changePage = function(page){
-     	world.pageFactory.getPage(page);
-		    return true;
-	  };
+        world.pageFactory.getPage(page);
+        return true;
+    };
 };
 
 module.exports = BrowserUtils;

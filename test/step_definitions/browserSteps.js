@@ -1,10 +1,10 @@
 var {defineSupportCode} = require('cucumber');
 
-defineSupportCode(function({Given, When, Then}) {
+defineSupportCode(function({Given}) {
 
-  Given(/^I navigate to the '(.+)' page$/, function (page) {
-	  var _this = this;
-		return _this.browserUtils.navigateTo(page);
-	});
+    Given(/^I navigate to the '(.+)' page$/, function (page) {
+        var _this = this;
+        return _this.browserUtils.navigateTo(page);
+    });
 
 });
