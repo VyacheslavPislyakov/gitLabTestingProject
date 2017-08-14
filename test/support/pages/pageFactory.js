@@ -1,7 +1,8 @@
 var profilePage = require('./profilePage');
 var homePage = require('./homePage');
 var newProjectPage = require('./newProjectPage');
-var projectPage = require('./projectPage')
+var projectPage = require('./projectPage');
+var sshKeysPage = require('./sshKeysPage');
 
 
 var PageFactory = function(world){
@@ -15,7 +16,8 @@ var PageFactory = function(world){
             'profile': profilePage,
             'home': homePage,
             'new-project': newProjectPage,
-            'project': projectPage
+            'project': projectPage,
+            'sshKeys': sshKeysPage
         };
         if(!pages[page]){
             throw new Error('Wrong page name: '+pages[page]);
