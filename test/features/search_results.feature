@@ -3,7 +3,7 @@ Feature: Correct search results
   I can search anything on the main page of website
   And should get appropriate results.
 
-  @home
+  @profile
   Scenario: Getting to our home page
     Given I navigate to the 'profile' page
     When Fill of Skype's field

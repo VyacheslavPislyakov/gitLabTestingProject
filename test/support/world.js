@@ -6,16 +6,10 @@ var Helper = require('./helpers/helper'),
     PageFactory = require('./pages/pageFactory');
 
 function World() {
-
-    this.memory = {
-        text: {},
-        numbers: {}
-    };
     this.fs = fs;
     this.helper = new Helper(this);
     this.browserUtils = new BrowserUtils(this);
     this.pageFactory = new PageFactory(this);
-
 }
 
 defineSupportCode(function({setWorldConstructor}) {
