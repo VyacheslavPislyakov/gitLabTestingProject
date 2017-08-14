@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var homePage = require('./homePage'),
     searchPage = require('./searchPage'),
     issuesPage = require('./issuesPage'),
@@ -7,9 +8,12 @@ var homePage = require('./homePage'),
     newFilePage = require('./newFilePage'),
     filePage = require('./filePage');
 
+=======
+var profilePage = require('./profilePage');
+var homePage = require('./homePage');
+>>>>>>> 03296e38ac1a26cd73af7be4915c86dfc122b21e
 var newProjectPage = require('./newProjectPage');
 var projectPage = require('./projectPage');
-    loginPage = require('./loginPage');
 
 
 var PageFactory = function(world){
@@ -20,6 +24,7 @@ var PageFactory = function(world){
 
     _this.getPage = function(page){
         var pages = {
+            'profile': profilePage,
             'home': homePage,
             'search' : searchPage,
             'issues' : issuesPage,
