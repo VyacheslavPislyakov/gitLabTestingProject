@@ -2,7 +2,7 @@ Feature: New project's creation
   As a user
   I can create new project on git.epam.com
 
-@creation
+@all@creation
 Scenario: Creation of a new project, filling project name and project description fields and setting internal visibility.
     Given I navigate to the 'home' page
     Then I am on page with the title 'Projects · Dashboard · GitLab'

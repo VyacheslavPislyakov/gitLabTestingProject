@@ -12,7 +12,7 @@ Background:
   And I click on 'creationButton'
   And I get to 'project' page
 
-  @file@project
+  @all@file@project
   Scenario: Add README.md file to the empty project
     And I click on 'readmeLink'
     And I get to 'newFile' page

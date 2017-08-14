@@ -2,7 +2,7 @@ Feature: Working with issues
   As a user
   I can work with issues
 
-  @issue@project
+  @all@issue@project
   Scenario: Add an issue for an existing project
     Given I navigate to the 'home' page
     Then I am on page with the title 'Projects · Dashboard · GitLab'
