@@ -6,9 +6,10 @@ Feature: Correct search results
   @profile
   Scenario: Getting to our home page
     Given I navigate to the 'profile' page
-    When Fill of Skype's field
-    When Fill of LinkedIn's field
-    When Fill of Twitter's field
-    When Fill of WebSite's field
-    When Fill of Organization's field
+    When I fill field 'skypeField' with the value 'test_skype'
+    When I fill field 'linkedinField' with the value 'test_linkedin'
+    When I fill field 'twitterField' with the value 'test_twitter'
+    When I fill field 'webSiteField' with the value 'test_website'
+    When I fill field 'organizationField' with the value 'test_organization'
     Then Update profile of the user 'buttonUpdate'
+    When I fill field 'skypeField' with the value 'test_skype'

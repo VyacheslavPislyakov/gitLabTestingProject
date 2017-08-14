@@ -12,8 +12,7 @@ defineSupportCode(function({Given, When, Then}) {
 	});
 
   When(/^I click on my account and login links$/, function () {
-    return this.pageFactory.currentPage.clickOnAccountLink()
-    .then(()=>{
+    return this.pageFactory.currentPage.clickOnAccountLink().then(()=>{
       return this.pageFactory.currentPage.clickOnLoginButton()
     });
   });

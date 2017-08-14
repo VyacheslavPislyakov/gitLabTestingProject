@@ -66,6 +66,23 @@ protractor.ElementFinder.prototype.waitReady = function() {
 };
 
 /**
+ * WRITTEN BY WARRIORS
+ *This is used to wait for elemet to be clickable, to scroll into view of this element and to click on this element
+ *
+ *
+ * @returns a promise that resolves to the element
+ */
+protractor.ElementFinder.prototype.waitAndScrollAndClick = function() {
+    var self = this;
+    // return browser.wait(function() {
+    //     return self.isPresentAndDisplayed();
+    // }, specTimeoutMs, 'timed out waiting for element')
+    //     .then(function () {
+    //         return self;
+    //     });
+};
+
+/**
  * This is used to determine an element is present (in the DOM) and is displayed.
  *
  * @returns a promise that resolves to true or false
