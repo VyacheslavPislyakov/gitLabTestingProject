@@ -1,4 +1,11 @@
-var homePage = require('./homePage');
+var homePage = require('./homePage'),
+    searchPage = require('./searchPage'),
+    issuesPage = require('./issuesPage'),
+    newIssuePage = require('./newIssuePage'),
+    eachIssuePage = require('./eachIssuePage'),
+    repositorePage = require('./repositorePage'),
+    newFilePage = require('./newFilePage'),
+    filePage = require('./filePage');
 
 var PageFactory = function(world){
 
@@ -9,6 +16,13 @@ var PageFactory = function(world){
     _this.getPage = function(page){
         var pages = {
             'home': homePage,
+            'search' : searchPage,
+            'issues' : issuesPage,
+            'newIssue' : newIssuePage,
+            'eachIssue' : eachIssuePage,
+            'repositore' : repositorePage,
+            'newFile' : newFilePage,
+            'file' : filePage
         };
         if(!pages[page]){
             throw new Error('Wrong page name: '+pages[page]);
