@@ -1,11 +1,13 @@
-var { defineSupportCode } = require("cucumber");
+var {defineSupportCode} = require("cucumber");
 
-defineSupportCode(function({Before, setDefaultTimeout}) {
+defineSupportCode(function({
+	Before,
+	setDefaultTimeout
+}) {
 
-  setDefaultTimeout(60 * 1000);
+	setDefaultTimeout(60 * 1000);
 
-  Before(function() {
-    return browser.driver.manage().window().maximize();
-  });
-
+	Before(function() {
+		return browser.driver.manage().window().maximize();
+	});
 });

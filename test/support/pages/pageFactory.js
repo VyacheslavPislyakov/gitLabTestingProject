@@ -1,5 +1,4 @@
-var homePage = require('./homePage');
-    loginPage = require('./loginPage');
+var profilePage = require('./profilePage');
 
 var PageFactory = function(world){
 
@@ -9,7 +8,7 @@ var PageFactory = function(world){
 
     _this.getPage = function(page){
         var pages = {
-            'home': homePage,
+            'profile': profilePage,
         };
         if(!pages[page]){
             throw new Error('Wrong page name: '+pages[page]);
