@@ -54,13 +54,15 @@ var profilePage = function(world) {
 		})
 	};
 
-	_this.checkValueOfTheElement(fieldName, value){
+	_this.checkValueOfTheElement = function(fieldName, value){
 		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName])), 5000).then(() => {
 			return _this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName]).scrollIntoView();
         }).then(element => {
-			return _this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName]).getText();
-		}).then(txt =>{
-			return expect(txt).to.equal(value);
+			return element.getAttribute('value').then(txt => {
+				// return console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaa' + txt);
+				return expect(txt).to.equal(value);
+
+			});
 		});
 	};
 

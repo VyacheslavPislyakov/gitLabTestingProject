@@ -5,7 +5,7 @@ defineSupportCode(function({Given, When, Then}) {
         return this.pageFactory.currentPage.clickOn(button);
     });
 
-    When(/^I check field '([^']*)' with the value '([^']*)'$/, function(fieldName, value) {
+    Then(/^I check field '([^']*)' with the value '([^']*)'$/, function(fieldName, value) {
 		return this.pageFactory.currentPage.checkValueOfTheElement(fieldName, value);
 	});
 });
