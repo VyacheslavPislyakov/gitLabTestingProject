@@ -1,8 +1,7 @@
+var profilePage = require('./profilePage');
 var homePage = require('./homePage');
-
 var newProjectPage = require('./newProjectPage');
-var projectPage = require('./projectPage');
-var loginPage = require('./loginPage');
+var projectPage = require('./projectPage')
 
 
 var PageFactory = function(world){
@@ -13,6 +12,7 @@ var PageFactory = function(world){
 
     _this.getPage = function(page){
         var pages = {
+            'profile': profilePage,
             'home': homePage,
             'new-project': newProjectPage,
             'project': projectPage
