@@ -21,5 +21,4 @@ var Helper = function(world){
         return _element;
     };
 };
-
 module.exports = Helper;
