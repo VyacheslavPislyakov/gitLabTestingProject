@@ -73,12 +73,12 @@ var homePage = function(world){
         });
     };
 
-    _this.clickOnUpdateProfileSettings = function(){
-        return _this.world.helper.elementGetter(_this._root,_this._data.elements.buttonUpdate).waitReady()
-        .then((element)=>{
-                return element.click();
-        });
-    };
+    _this.clickOn = function(elementName) {
+		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), 5000)
+			.then(() => {
+				_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName]).click();
+			});
+	};
 
 };
 
