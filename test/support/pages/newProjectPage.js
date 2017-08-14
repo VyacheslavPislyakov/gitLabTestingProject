@@ -30,7 +30,7 @@ var newProjectPage = function(world){
   _this.fillField = function(fieldName,value){
     return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root,_this._data.elements[fieldName])), 5000)
       .then(()=>{
-        _this.world.helper.elementGetter(_this._root,_this._data.elements[fieldName]).sendKeys(value);
+        return _this.world.helper.elementGetter(_this._root,_this._data.elements[fieldName]).sendKeys(value);
       });
   };
 
@@ -44,7 +44,7 @@ var newProjectPage = function(world){
   _this.clickOn = function(elementName){
     return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root,_this._data.elements[elementName])), 5000)
       .then(()=>{
-        _this.world.helper.elementGetter(_this._root,_this._data.elements[elementName]).click();
+        return _this.world.helper.elementGetter(_this._root,_this._data.elements[elementName]).click();
       });
   };
 };

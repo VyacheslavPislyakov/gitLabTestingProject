@@ -9,9 +9,6 @@ var BrowserUtils = function(world){
     };
 
     _this.navigateTo = function(page){
-        // world.pageFactory.getPage(page);
-        // return browser.get(_this.url)
-
         _this.data = world.pageFactory.getPage(page);
         return browser.get(_this.data.url);
     };
