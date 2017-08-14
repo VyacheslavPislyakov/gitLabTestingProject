@@ -3,7 +3,7 @@ var protractor = require("protractor");
 
 exports.config = {
   seleniumAddress: "http://localhost:4444/wd/hub",
-  baseUrl: "https://fetch.co.uk/",
+  baseUrl: "https://git.epam.com/",
   capabilities: {
     browserName: process.env.BROWSER
   },
@@ -13,6 +13,7 @@ exports.config = {
   onPrepare: function() {
     global.expect = chai.expect;
     global.EC = protractor.ExpectedConditions;
+    browser.ignoreSynchronization = true;
   },
   cucumberOpts: {
     strict: true,
