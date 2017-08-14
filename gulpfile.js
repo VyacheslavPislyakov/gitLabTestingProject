@@ -5,7 +5,7 @@ var gutil = require('gulp-util');
 function runProtractorConfig() {
 
 	gutil.env.browser ? process.env.BROWSER = gutil.env.browser : process.env.BROWSER = 'chrome';
-	gutil.env.tags ? process.env.TAGS = gutil.env.tags : process.env.TAGS = '@deletion';
+	gutil.env.tags ? process.env.TAGS = gutil.env.tags : process.env.TAGS = '@file';
 
   return gulp.src("features/*.feature")
 		.pipe(protractor({
