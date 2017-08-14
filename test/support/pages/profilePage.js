@@ -66,18 +66,21 @@ var homePage = function(world){
         });
     };
 
-    _this.insertTextOrganizationField = function(){
-        return _this.world.helper.elementGetter(_this._root,_this._data.elements.organizationField).waitReady()
-        .then((element)=>{
-                return element.sendKeys('test_organization');
-        });
-    };
+    // _this.insertTextOrganizationField = function(){
+    //     return _this.world.helper.elementGetter(_this._root,_this._data.elements.organizationField).waitReady()
+    //     .then((element)=>{
+    //             return element.sendKeys('test_organization');
+    //     });
+    // };
 
     _this.clickOn = function(elementName) {
-		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), 5000)
-			.then(() => {
-				_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName]).click();
-			});
+		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), 5000).then(el => {
+            // _this.world.helper.elementGetter(_this._root, _this._data.elements[elementName]).scrollIntoView();
+            return el.scrollIntoView();
+		}).then(() => {
+            // _this.world.helper.elementGetter(_this._root, _this._data.elements[elementName]).click();
+            return el.click();
+        })
 	};
 
 };

@@ -11,5 +11,4 @@ Feature: Correct search results
     When Fill of Twitter's field
     When Fill of WebSite's field
     When Fill of Organization's field
-    Then Update profile of the user
-    Given I navigate to the 'profile' page
+    Then Update profile of the user 'buttonUpdate'

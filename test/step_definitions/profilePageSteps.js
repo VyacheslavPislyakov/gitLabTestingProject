@@ -22,7 +22,7 @@ defineSupportCode(function({Given, When, Then}) {
         return this.pageFactory.currentPage.insertTextOrganizationField();
     });
 
-    Then(/^Update profile of the user$/, function () {
-        return this.pageFactory.currentPage.clickOnUpdateProfileSettings();
+    Then(/^Update profile of the user '(.+)'$/, function (button) {
+        return this.pageFactory.currentPage.clickOn(button);
     });
 });
