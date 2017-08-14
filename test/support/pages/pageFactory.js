@@ -1,4 +1,5 @@
 var homePage = require('./homePage');
+    loginPage = require('./loginPage');
 
 var PageFactory = function(world){
 
