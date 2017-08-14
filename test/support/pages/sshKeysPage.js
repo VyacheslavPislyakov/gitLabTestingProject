@@ -63,13 +63,13 @@ var profilePage = function(world) {
 		});
 	};
 
-	_this.checkValueOfTheElement = function(fieldName, value){
+	_this.checkValueOfTheElement = function(fieldName){
 		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName])), 5000).then(() => {
 			return _this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName]).scrollIntoView();
         }).then(element => {
 			return element.getText().then(txt => {
 				// return console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaa ' + txt);
-				return expect(txt).to.equal(value);
+				return expect(txt).to.equal(_this._data.ssh.sshKey);
 			});
 		});
 	};

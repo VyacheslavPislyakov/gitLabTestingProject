@@ -1,7 +1,3 @@
-var profilePage = require('./profilePage');
-var homePage = require('./homePage');
-var newProjectPage = require('./newProjectPage');
-var projectPage = require('./projectPage');
 var sshKeysPage = require('./sshKeysPage');
 var homePage = require('./homePage'),
     searchPage = require('./searchPage'),
@@ -36,7 +32,7 @@ var PageFactory = function(world){
             'file' : filePage,
             'new-project': newProjectPage,
             'project': projectPage,
-            'sshKeys': sshKeysPage
+            'sshKeys': sshKeysPage,
             'project-settings': projectSettingsPage
         };
         if(!pages[page]){
