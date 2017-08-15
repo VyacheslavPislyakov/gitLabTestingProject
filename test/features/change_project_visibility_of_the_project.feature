@@ -19,3 +19,8 @@ Feature: Working with project files
 		And I click on 'saveChangesButton'
 		And I get to 'project' page
 		And I have my project created with the name 'testProject' and visible private
+	#POSTCondition
+		And I click on 'settingsTab'
+	    And I get to 'project-settings' page
+	    And I click on 'removeProjectButton'
+	    And I confirm the deletion of 'testProject' project

@@ -28,6 +28,10 @@ var profilePage = function(world) {
 				css: '.btn.btn-create',
 				isSingle: true
 			},
+			buttonRemove: {
+				css: '.btn.btn-remove.delete-key',
+				isSingle: true
+			}
 		}
 	};
 
@@ -49,8 +53,6 @@ var profilePage = function(world) {
 			return _this.world.helper.elementGetter(_this._root, _this._data.elements[elementName]).scrollIntoView();
 		}).then(element => {
 			return element.click();
-		}).then(() =>{
-			browser.sleep(5000);
 		});
 	};
 
