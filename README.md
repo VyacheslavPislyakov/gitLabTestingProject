@@ -10,13 +10,10 @@
 ### Open a command window in the project's folder and run:
     
      npm install
-     webdriver-manager update
      webdriver-manager start
 
 ### Then open another command window in the project's folder and selectively run:
     
      gulp run
      gulp run --browser=firefox
-     gulp run --tags="@data_change"
-     gulp run --tags="@basket"
-     gulp run --tags="@search"
+     gulp run --tags="@all"
