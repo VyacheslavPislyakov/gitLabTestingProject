@@ -5,4 +5,4 @@ Feature: Correct search results
     Given I navigate to the 'sshKeys' page
     When I fill field 'keyField' with the sshKey
     Then Click to Add key 'buttonCreate'
-	Then I check field sshKey 'installKeyField' with the sshKey
+	  Then I check field sshKey 'installKeyField' with the sshKey
