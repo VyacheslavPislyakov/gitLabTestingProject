@@ -24,6 +24,20 @@ var filePage = function(world){
         css: 'span',
         text: 'Settings',
         isSingle: true
+      },
+      deleteButton: {
+        css: '.btn-remove',
+        text: 'Delete',
+        isSingle: true
+      },
+      deleteFileButton: {
+        css: '.btn-remove',
+        text: 'Delete file',
+        isSingle: true
+      },
+      repository: {
+        css: 'a[title="Repository"]',
+        isSingle: true
       }
     }
   };

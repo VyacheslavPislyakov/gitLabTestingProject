@@ -4,12 +4,14 @@ Feature: Working with issues
 
   @issue@project@all
   Scenario: Add an issue for an existing project
+    #precondition
     Given I navigate to the 'home' page
     Then I am on page with the title 'Projects · Dashboard · GitLab'
     When I perform a search of 'projectForTestWarriors'
     And I get to 'search' page
     And I click on 'projectForWork'
     And I get to 'project' page
+    #test
     And I click on 'issues'
     And I get to 'issues' page
     And I click on 'newIssue'
