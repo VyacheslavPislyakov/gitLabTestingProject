@@ -10,7 +10,7 @@ Feature: Working with project files
     And I click on 'newProjectButton'
     And I get to 'new-project' page
     Then I am on page with the title 'New Project · GitLab'
-    And I fill field 'projectName' with the value 'projectForTest'
+    And I fill field 'projectName' with the value 'project-for-readme'
     And I click on 'creationButton'
     And I get to 'project' page
     #test
@@ -25,7 +25,7 @@ Feature: Working with project files
     And I click on 'settingsTab'
     And I get to 'project-settings' page
     And I click on 'removeProjectButton'
-    And I confirm the deletion of 'projectForTest' project
+    And I confirm the deletion of 'project-for-readme' project
 
   @file@project@all
     Scenario: Add file to the existing project
@@ -35,7 +35,7 @@ Feature: Working with project files
     And I click on 'newProjectButton'
     And I get to 'new-project' page
     Then I am on page with the title 'New Project · GitLab'
-    And I fill field 'projectName' with the value 'projectForTest'
+    And I fill field 'projectName' with the value 'project-for-file'
     And I click on 'creationButton'
     And I get to 'project' page
     And I click on 'readmeLink'
@@ -59,4 +59,4 @@ Feature: Working with project files
     And I click on 'settingsTab'
     And I get to 'project-settings' page
     And I click on 'removeProjectButton'
-    And I confirm the deletion of 'projectForTest' project
+    And I confirm the deletion of 'project-for-file' project
