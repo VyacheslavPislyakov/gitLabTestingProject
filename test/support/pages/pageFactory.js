@@ -1,3 +1,4 @@
+var sshKeysPage = require('./sshKeysPage');
 var homePage = require('./homePage'),
     searchPage = require('./searchPage'),
     issuesPage = require('./issuesPage'),
@@ -8,7 +9,8 @@ var homePage = require('./homePage'),
     filePage = require('./filePage'),
     profilePage = require('./profilePage'),
     newProjectPage = require('./newProjectPage'),
-    projectPage = require('./projectPage');
+    projectPage = require('./projectPage'),
+    projectSettingsPage = require('./projectSettingsPage');
 
 
 var PageFactory = function(world){
@@ -29,8 +31,9 @@ var PageFactory = function(world){
             'newFile' : newFilePage,
             'file' : filePage,
             'new-project': newProjectPage,
-            'project': projectPage
-
+            'project': projectPage,
+            'sshKeys': sshKeysPage,
+            'project-settings': projectSettingsPage
         };
         if(!pages[page]){
             throw new Error('Wrong page name: '+pages[page]);
