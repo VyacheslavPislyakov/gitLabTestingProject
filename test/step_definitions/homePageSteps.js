@@ -24,4 +24,8 @@ defineSupportCode(function({Given,When,Then}) {
 		});
 	});
 
+	When(/^I perform a search of '([^']*)'$/, function(projectName) {
+		return this.pageFactory.currentPage.performSearch(projectName);
+	});
+
 });

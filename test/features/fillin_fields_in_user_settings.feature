@@ -1,6 +1,6 @@
 Feature: Correct search results
 
-  @profile
+  @all@profile
   Scenario: Getting to our home page
     Given I navigate to the 'profile' page
     When I fill field 'skypeField' with the value 'test_skype'

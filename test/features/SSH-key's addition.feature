@@ -1,6 +1,6 @@
 Feature: Correct search results
 
-  @sshKeys
+  @all@sshKeys
   Scenario: Getting to our sshKeys page
     Given I navigate to the 'sshKeys' page
     When I fill field 'keyField' with the sshKey

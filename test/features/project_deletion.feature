@@ -12,14 +12,14 @@ Background:
   And I click on 'creationButton'
   And I get to 'project' page
 
-@deletion@empty_project
+@all@deletion@empty_project
 Scenario: Deletion of an empty project.
     And I remove an empty project
     And I get to 'home' page
     Then I am on page with the title 'Projects · Dashboard · GitLab'
     And list of projects in 'Your projects' tab doesn't contain 'my-awesome-project' name
 
-@deletion@full_project
+@all@deletion@full_project
 Scenario: Deletion of a project with some content.
     And I click on 'readmeLink'
     And I get to 'newFile' page

@@ -13,7 +13,11 @@ var filePage = function(world){
         isSingle: true
       },
       description: {
-        css: '.file-content p',
+          css: '.file-content p',
+          isSingle: true
+      },
+      text: {
+        css: '.line',
         isSingle: true
       },
       settingsTab: {

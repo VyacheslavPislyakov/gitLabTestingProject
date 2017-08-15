@@ -32,6 +32,14 @@ var projectPage = function(world){
         css: 'a.underlined-link',
         text: 'README',
         isSingle: true
+      },
+      repository: {
+        css: 'a[title="Repository"]',
+        isSingle: true
+      },
+      issues: {
+        css: '.shortcuts-issues',
+        isSingle: true
       }
    }
   };

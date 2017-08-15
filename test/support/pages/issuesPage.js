@@ -16,6 +16,16 @@ var issuesPage = function(world){
     }
   };
 
+  _this.clickOn = function(elementName){
+    return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root,_this._data.elements[elementName])), 5000)
+      .then(()=>{
+        return _this.world.helper.elementGetter(_this._root,_this._data.elements[elementName]).click()
+        .then(()=>{
+          return browser.wait(EC.invisibilityOf(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])));
+        })
+      });
+  };
+
 };
 
 inheritance.inherits(Page, issuesPage);
