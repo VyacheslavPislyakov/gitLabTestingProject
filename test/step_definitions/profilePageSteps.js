@@ -8,4 +8,9 @@ defineSupportCode(function({Given, When, Then}) {
     Then(/^I check field '([^']*)' with the value '([^']*)'$/, function(fieldName, value) {
 		return this.pageFactory.currentPage.checkValueOfTheElement(fieldName, value);
 	});
+
+    Then(/^I remove value of the field '([^']*)'$/, function(fieldName) {
+		return this.pageFactory.currentPage.removeValue(fieldName);
+	});
+
 });

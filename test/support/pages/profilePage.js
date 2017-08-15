@@ -64,6 +64,15 @@ var profilePage = function(world) {
 		});
 	};
 
+	_this.removeValue = function(fieldName){
+		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName])), 5000).then(() => {
+			return _this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName]).scrollIntoView();
+        }).then(element => {
+			return _this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName]).clear();
+		});
+	};
+
+
 };
 
 inheritance.inherits(Page, profilePage);

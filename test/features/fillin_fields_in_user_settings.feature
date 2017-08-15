@@ -16,3 +16,10 @@ Feature: Correct search results
 		Then I check field 'twitterField' with the value 'test_twitter'
 		Then I check field 'webSiteField' with the value 'test_website'
 		Then I check field 'organizationField' with the value 'test_organization'
+		#PostCondition
+		Then I remove value of the field 'skypeField'
+		Then I remove value of the field 'linkedinField'
+		Then I remove value of the field 'twitterField'
+		Then I remove value of the field 'webSiteField'
+		Then I remove value of the field 'organizationField'
+		Then Update profile of the user 'buttonUpdate'
