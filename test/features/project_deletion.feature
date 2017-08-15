@@ -1,4 +1,4 @@
-Feature: New project's creation
+Feature: Project's deletion
   As a user
   I can delete one of my projects on git.epam.com
 

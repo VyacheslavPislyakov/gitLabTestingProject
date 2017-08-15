@@ -31,7 +31,7 @@ var projectSettingsPage = function(world){
     .then(()=>{
       return _this.world.helper.elementGetter(_this._root,_this._data.elements[elementName]).scrollIntoView();
     }).then(()=>{
-      return _this.world.helper.elementGetter(_this._root,_this._data.elements.removeProjectButton).click();
+      return _this.world.helper.elementGetter(_this._root,_this._data.elements[elementName]).click();
     });
   };
   _this.confirmProjectDeletion = function(projectName){
