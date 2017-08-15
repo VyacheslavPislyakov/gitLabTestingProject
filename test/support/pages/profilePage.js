@@ -59,9 +59,7 @@ var profilePage = function(world) {
 			return _this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName]).scrollIntoView();
         }).then(element => {
 			return element.getAttribute('value').then(txt => {
-				// return console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaa' + txt);
 				return expect(txt).to.equal(value);
-
 			});
 		});
 	};

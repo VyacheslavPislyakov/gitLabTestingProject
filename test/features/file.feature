@@ -4,14 +4,16 @@ Feature: Working with project files
 
   @file@project@all
     Scenario: Add README.md file to the empty project
+    #precondition
     Given I navigate to the 'home' page
     Then I am on page with the title 'Projects · Dashboard · GitLab'
     And I click on 'newProjectButton'
     And I get to 'new-project' page
     Then I am on page with the title 'New Project · GitLab'
-    And I fill field 'projectName' with the value 'testProject10'
+    And I fill field 'projectName' with the value 'projectForTest'
     And I click on 'creationButton'
     And I get to 'project' page
+    #test
     And I click on 'readmeLink'
     And I get to 'newFile' page
     And I fill field 'fileEditor' with the value 'text for check'
@@ -19,15 +21,29 @@ Feature: Working with project files
     And I get to 'file' page
     Then I check 'title' equal 'README.md'
     Then I check 'description' equal 'text for check'
+    #postcondition
+    And I click on 'settingsTab'
+    And I get to 'project-settings' page
+    And I click on 'removeProjectButton'
+    And I confirm the deletion of 'projectForTest' project
 
   @file@project@all
     Scenario: Add file to the existing project
+    #precondition
     Given I navigate to the 'home' page
     Then I am on page with the title 'Projects · Dashboard · GitLab'
-    When I perform a search of 'projectForTestWarriors'
-    And I get to 'search' page
-    And I click on 'projectForWork'
+    And I click on 'newProjectButton'
+    And I get to 'new-project' page
+    Then I am on page with the title 'New Project · GitLab'
+    And I fill field 'projectName' with the value 'projectForTest'
+    And I click on 'creationButton'
     And I get to 'project' page
+    And I click on 'readmeLink'
+    And I get to 'newFile' page
+    And I fill field 'fileEditor' with the value 'text for check'
+    And I click on 'commitChanges'
+    And I get to 'file' page
+    #test
     When I click on 'repository'
     And I get to 'repositore' page
     When I click on 'plusButton'
@@ -39,3 +55,8 @@ Feature: Working with project files
     And I get to 'file' page
     Then I check 'title' equal 'test_name'
     Then I check 'text' equal 'text for check'
+    #postcondition
+    And I click on 'settingsTab'
+    And I get to 'project-settings' page
+    And I click on 'removeProjectButton'
+    And I confirm the deletion of 'projectForTest' project
