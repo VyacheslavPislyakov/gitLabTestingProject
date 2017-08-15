@@ -26,10 +26,10 @@ var projectSettingsPage = function(world) {
 			},
 			projectVisibilitySelect: {
 				css: 'option',
-                text: 'Private',
+        text: 'Private',
 				isSingle: true
 			},
-            saveChangesButton: {
+      saveChangesButton: {
 				css: '.btn.btn-save',
 				isSingle: true
 			},

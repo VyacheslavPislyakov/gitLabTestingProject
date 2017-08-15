@@ -12,10 +12,9 @@ Feature: Working with project files
 		And I set internal visibility of the project
 		And I click on 'creationButton'
 		And I get to 'project' page
-		#And I have my project created with the name 'testProject', the project description 'This is my test Project' 	and visible internally
 		And I click on 'settingsTab'
-	    And I get to 'project-settings' page
-	    And I click on 'projectVisibilitySelect'
+	  And I get to 'project-settings' page
+	  And I click on 'projectVisibilitySelect'
 		And I click on 'saveChangesButton'
 		And I get to 'project' page
 		And I have my project created with the name 'testProject' and visible private

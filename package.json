@@ -1,0 +1,31 @@
+{
+  "name": "gitlab_testing_project",
+  "version": "1.0.0",
+  "description": "npm install -g gulp\r     npm install -g webdriver-manager",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^4.1.0",
+   "cucumber": "^2.3.1",
+   "gulp": "^3.9.1",
+   "gulp-protractor": "^4.1.0",
+   "protractor": "^5.1.2",
+   "protractor-cucumber-framework": "^3.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VyacheslavPislyakov/gitLabTestingProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VyacheslavPislyakov/gitLabTestingProject/issues"
+  },
+  "homepage": "https://github.com/VyacheslavPislyakov/gitLabTestingProject#readme"
+}
