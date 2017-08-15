@@ -1,6 +1,6 @@
 Feature: Working with project files
 
-	@visibility
+	@all@visibility
 	Scenario: change visibility of the project
 		Given I navigate to the 'home' page
 		Then I am on page with the title 'Projects · Dashboard · GitLab'
