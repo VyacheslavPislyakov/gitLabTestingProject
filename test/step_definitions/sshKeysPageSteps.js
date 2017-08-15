@@ -16,4 +16,9 @@ defineSupportCode(function({Given, When, Then}) {
 	When(/^I fill field '([^']*)' with the sshKey$/, function(fieldName) {
 		return this.pageFactory.currentPage.fillField(fieldName);
 	});
+
+    Then(/^Remove SSHKey of the user '([^']*)'$/, function(fieldName) {
+		return this.pageFactory.currentPage.removeSSHKey(fieldName);
+	});
+
 });

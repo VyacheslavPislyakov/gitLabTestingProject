@@ -16,7 +16,7 @@ var profilePage = function(world) {
 				id: 'key_key',
 				isSingle: true
 			},
-			installKeyField:{
+			installKeyField: {
 				css: '.well-pre',
 				isSingle: true
 			},
@@ -29,13 +29,13 @@ var profilePage = function(world) {
 				isSingle: true
 			},
 			buttonRemove: {
-				css: '.btn.btn-remove.delete-key',
-				isSingle: true
+				css: '.fa.fa-trash',
+				isSingle: false
 			}
 		}
 	};
 
-	_this.readFileSSHKey = function () {
+	_this.readFileSSHKey = function() {
 		return fs.readFileSync('./sshKeyPub.txt', 'utf8');
 	};
 
@@ -43,7 +43,7 @@ var profilePage = function(world) {
 	_this.fillField = function(fieldName) {
 		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName])), 5000).then(() => {
 			return _this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName]).scrollIntoView()
-        }).then(element => {
+		}).then(element => {
 			return _this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName]).sendKeys(_this.readFileSSHKey());
 		});
 	};
@@ -56,15 +56,27 @@ var profilePage = function(world) {
 		});
 	};
 
-	_this.checkValueOfTheElement = function(fieldName){
+	_this.checkValueOfTheElement = function(fieldName) {
 		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName])), 5000).then(() => {
 			return _this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName]).scrollIntoView();
-        }).then(element => {
+		}).then(element => {
 			return element.getText().then(txt => {
 				return expect(txt).to.equal(_this.readFileSSHKey());
 			});
 		});
 	};
+
+	_this.removeSSHKey = function(elementName) {
+		return browser.wait(EC.presenceOf(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), 5000).then(() => {
+			return _this.world.helper.elementGetter(_this._root, _this._data.elements[elementName]).first().scrollIntoView();
+		}).then(() => {
+			return _this.world.helper.elementGetter(_this._root, _this._data.elements[elementName]).first().click();
+		}).then(() => {
+			return browser.wait(EC.alertIsPresent(), 5000);
+		}).then(() => {
+			browser.switchTo().alert().accept();
+		});
+	}
 
 };
 

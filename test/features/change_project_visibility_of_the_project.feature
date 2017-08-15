@@ -1,6 +1,6 @@
 Feature: Working with project files
 
-	@all@visibility
+	@all @visibility
 	Scenario: change visibility of the project
 		Given I navigate to the 'home' page
 		Then I am on page with the title 'Projects · Dashboard · GitLab'
@@ -13,13 +13,13 @@ Feature: Working with project files
 		And I click on 'creationButton'
 		And I get to 'project' page
 		And I click on 'settingsTab'
-	  And I get to 'project-settings' page
-	  And I click on 'projectVisibilitySelect'
+		And I get to 'project-settings' page
+		And I click on 'projectVisibilitySelect'
 		And I click on 'saveChangesButton'
 		And I get to 'project' page
 		And I have my project created with the name 'testProject' and visible private
-	#POSTCondition
+		#POSTCondition
 		And I click on 'settingsTab'
-	    And I get to 'project-settings' page
-	    And I click on 'removeProjectButton'
-	    And I confirm the deletion of 'testProject' project
+		And I get to 'project-settings' page
+		And I click on 'removeProjectButton'
+		And I confirm the deletion of 'testProject' project
