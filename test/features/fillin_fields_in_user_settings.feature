@@ -3,6 +3,13 @@ Feature: Correct search results
 	@all @profile
 	Scenario: Getting to our home page
 		Given I navigate to the 'profile' page
+		#PreCondition
+		Given I remove value of the field 'skypeField'
+		Given I remove value of the field 'linkedinField'
+		Given I remove value of the field 'twitterField'
+		Given I remove value of the field 'webSiteField'
+		Given I remove value of the field 'organizationField'
+		Given Update profile of the user 'buttonUpdate'
 		When I fill field 'skypeField' with the value 'test_skype'
 		When I fill field 'linkedinField' with the value 'test_linkedin'
 		When I fill field 'twitterField' with the value 'test_twitter'
