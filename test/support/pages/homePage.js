@@ -30,7 +30,7 @@ var homePage = function(world) {
 	_this.authorize = function() {
 		return browser.wait(EC.alertIsPresent(), 10000)
 		.then(() => {
-		return browser.switchTo().alert().sendKeys(process.env.MY_USERNAME + protractor.Key.TAB + process.env.MY_PASSWORD + protractor.Key.ENTER)
+		return browser.switchTo().activeElement().sendKeys(process.env.MY_USERNAME + protractor.Key.TAB + process.env.MY_PASSWORD + protractor.Key.ENTER)
 //		alert.accept();
 	});
 
