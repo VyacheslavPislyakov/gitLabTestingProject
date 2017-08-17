@@ -77,9 +77,9 @@ var projectPage = function(world) {
 			}).then((title) => {
 				return expect(title).to.equal(expectedTitle);
 			}).then(() => {
-				return browser.wait(EC.visibilityOf(_this.world.helper.elementGetter(_this._root, _this._data.elements.shieldIcon)), 5000)
+				return browser.wait(EC.visibilityOf(_this.world.helper.elementGetter(_this._root, _this._data.elements.privateIcon)), 5000)
 			}, (error) => {
-				console.log("Shield icon is not visible");
+				console.log("Private icon is not visible");
 			});
 	};
 
