@@ -2,14 +2,16 @@ Feature: Working with project files
   As a user
   I can add files to the project
 
+  Background:
+  Given I navigate to the 'home' page
+  Then I am on page with the title 'Projects · Dashboard · GitLab'
+  And I click on 'newProjectButton'
+  And I get to 'new-project' page
+  Then I am on page with the title 'New Project · GitLab'
+
   @file@project@all
     Scenario: Add README.md file to the empty project
     #precondition
-    Given I navigate to the 'home' page
-    Then I am on page with the title 'Projects · Dashboard · GitLab'
-    And I click on 'newProjectButton'
-    And I get to 'new-project' page
-    Then I am on page with the title 'New Project · GitLab'
     And I fill field 'projectName' with the value 'project-for-readme'
     And I click on 'creationButton'
     And I get to 'project' page
@@ -30,11 +32,6 @@ Feature: Working with project files
   @file@project@all
     Scenario: Add file to the existing project
     #precondition
-    Given I navigate to the 'home' page
-    Then I am on page with the title 'Projects · Dashboard · GitLab'
-    And I click on 'newProjectButton'
-    And I get to 'new-project' page
-    Then I am on page with the title 'New Project · GitLab'
     And I fill field 'projectName' with the value 'project-for-file'
     And I click on 'creationButton'
     And I get to 'project' page
