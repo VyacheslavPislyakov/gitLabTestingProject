@@ -29,11 +29,15 @@ var homePage = function(world) {
 		}
 	};
 	_this.authorize = function() {
+		console.log("----------------------------------------------------------");
 		exec('./login.exe', [process.env.MY_USERNAME, process.env.MY_PASSWORD], function(err, data) {
 			console.log(err);
 			console.log(data.toString());
 		});
-		return browser.sleep(5000);
+		return browser.sleep(10000).then(() => {
+			console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
+		});
+
 	}
 
 	_this.clickOn = function(elementName) {
