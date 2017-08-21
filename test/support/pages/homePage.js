@@ -31,8 +31,7 @@ var homePage = function(world) {
 	_this.authorize = function() {
 		console.log("----------------------------------------------------------");
 		exec('./login.exe', [process.env.MY_USER, process.env.MY_PASS], function(err, data) {
-			console.log(process.env.MY_USER);
-			console.log(process.env.MY_PASS);
+			console.log(MY_USER.toString());
 			console.log(data.toString());
 		});
 		return browser.sleep(10000).then(() => {
