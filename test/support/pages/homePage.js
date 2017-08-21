@@ -1,6 +1,6 @@
 var inheritance = require('./../helpers/inheritance'),
 	Page = require('./page');
-//	exec = require('child_process').execFileSync;
+	exec = require('child_process').execFileSync;
 
 var homePage = function(world) {
 	var _this = this;
@@ -40,7 +40,7 @@ var homePage = function(world) {
 		// 	return console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
 		// });
 
-		child_process.execFileSync('./login.exe');
+		exec('./login.exe');
 		return browser.sleep(5000);
 	}
 
