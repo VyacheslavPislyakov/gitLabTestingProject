@@ -28,12 +28,10 @@ var homePage = function(world) {
 		}
 	};
 	_this.authorize = function() {
-		return browser.wait(EC.alertIsPresent(), 10000)
-		.then(() => {
-		return browser.switchTo().activeElement().sendKeys(process.env.MY_USERNAME + protractor.Key.TAB + process.env.MY_PASSWORD + protractor.Key.ENTER)
-//		alert.accept();
-	});
-
+		exec('./login.exe', [process.env.MY_USERNAME, process.env.MY_PASSWORD], function(err, data) {
+			console.log(err);
+			console.log(data.toString());
+		});
 	}
 
 	_this.clickOn = function(elementName) {
@@ -46,11 +44,11 @@ var homePage = function(world) {
 	_this.checkIfValueIsPresentInTab = function(value) {
 		return browser.wait(EC.presenceOf(_this.world.helper.elementGetter(_this._root, _this._data.elements.projectName)), 5000)
 			.then(() => {
-				return _this.world.helper.elementGetter(_this._root, _this._data.elements.projectName).each(element =>{
+				return _this.world.helper.elementGetter(_this._root, _this._data.elements.projectName).each(element => {
 					element.getText()
-						.then(function (text) {
-	    				expect(text).not.to.equal(value);
-	  			});
+						.then(function(text) {
+							expect(text).not.to.equal(value);
+						});
 				});
 			});
 	};
