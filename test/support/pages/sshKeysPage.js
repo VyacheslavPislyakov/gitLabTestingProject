@@ -41,7 +41,7 @@ var profilePage = function(world) {
 
 
 	_this.fillField = function(fieldName) {
-		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName])), 5000).then(() => {
+		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName])), _this.timeout).then(() => {
 			return _this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName]).scrollIntoView()
 		}).then(element => {
 			return _this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName]).sendKeys(_this.readFileSSHKey());
@@ -49,7 +49,7 @@ var profilePage = function(world) {
 	};
 
 	_this.clickOn = function(elementName) {
-		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), 5000).then(() => {
+		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), _this.timeout).then(() => {
 			return _this.world.helper.elementGetter(_this._root, _this._data.elements[elementName]).scrollIntoView();
 		}).then(element => {
 			return element.click();
@@ -57,7 +57,7 @@ var profilePage = function(world) {
 	};
 
 	_this.checkValueOfTheElement = function(fieldName) {
-		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName])), 5000).then(() => {
+		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName])), _this.timeout).then(() => {
 			return _this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName]).scrollIntoView();
 		}).then(element => {
 			return element.getText().then(txt => {
@@ -67,12 +67,12 @@ var profilePage = function(world) {
 	};
 
 	_this.removeSSHKey = function(elementName) {
-		return browser.wait(EC.presenceOf(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), 5000).then(() => {
+		return browser.wait(EC.presenceOf(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), _this.timeout).then(() => {
 			return _this.world.helper.elementGetter(_this._root, _this._data.elements[elementName]).first().scrollIntoView();
 		}).then(() => {
 			return _this.world.helper.elementGetter(_this._root, _this._data.elements[elementName]).first().click();
 		}).then(() => {
-			return browser.wait(EC.alertIsPresent(), 5000);
+			return browser.wait(EC.alertIsPresent(), _this.timeout);
 		}).then(() => {
 			browser.switchTo().alert().accept();
 		});

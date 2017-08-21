@@ -7,6 +7,7 @@ Page.prototype._commonData = {
 };
 
 Page.prototype.url = '';
+Page.prototype.timeout = 10000;
 
 Page.prototype.getTitle = function(){
     return browser.getTitle();

@@ -39,7 +39,7 @@ var profilePage = function(world) {
 	};
 
 	_this.fillField = function(fieldName, value) {
-		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName])), 5000).then(() => {
+		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName])), _this.timeout).then(() => {
 			return _this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName]).scrollIntoView()
         }).then(element => {
 			return _this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName]).sendKeys(value);
@@ -47,7 +47,7 @@ var profilePage = function(world) {
 	};
 
 	_this.clickOn = function(elementName) {
-		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), 5000).then(() => {
+		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), _this.timeout).then(() => {
 			return _this.world.helper.elementGetter(_this._root, _this._data.elements[elementName]).scrollIntoView();
 		}).then(element => {
 			return element.click();
@@ -55,7 +55,7 @@ var profilePage = function(world) {
 	};
 
 	_this.checkValueOfTheElement = function(fieldName, value){
-		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName])), 5000).then(() => {
+		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName])), _this.timeout).then(() => {
 			return _this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName]).scrollIntoView();
         }).then(element => {
 			return element.getAttribute('value').then(txt => {
@@ -65,7 +65,7 @@ var profilePage = function(world) {
 	};
 
 	_this.removeValue = function(fieldName){
-		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName])), 5000).then(() => {
+		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName])), _this.timeout).then(() => {
 			return _this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName]).scrollIntoView();
         }).then(element => {
 			return _this.world.helper.elementGetter(_this._root, _this._data.elements[fieldName]).clear();

@@ -37,14 +37,14 @@ var homePage = function(world) {
 	}
 
 	_this.clickOn = function(elementName) {
-		return browser.wait(EC.presenceOf(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), 10000)
+		return browser.wait(EC.presenceOf(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), _this.timeout)
 			.then(() => {
 				_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName]).click();
 			});
 	};
 
 	_this.checkIfValueIsPresentInTab = function(value) {
-		return browser.wait(EC.presenceOf(_this.world.helper.elementGetter(_this._root, _this._data.elements.projectName)), 5000)
+		return browser.wait(EC.presenceOf(_this.world.helper.elementGetter(_this._root, _this._data.elements.projectName)), _this.timeout)
 			.then(() => {
 				return _this.world.helper.elementGetter(_this._root, _this._data.elements.projectName).each(element => {
 					element.getText()

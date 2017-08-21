@@ -52,7 +52,7 @@ var filePage = function(world){
   };
 
   _this.clickOn = function(elementName) {
-		return browser.wait(EC.presenceOf(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), 10000)
+		return browser.wait(EC.presenceOf(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), _this.timeout)
 			.then(() => {
 				_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName]).click();
 			});

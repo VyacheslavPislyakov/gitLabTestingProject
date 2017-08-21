@@ -31,7 +31,7 @@ var newFilePage = function(world){
   };
 
 _this.clickOn = function(elementName){
-  return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root,_this._data.elements[elementName])), 5000)
+  return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root,_this._data.elements[elementName])), _this.timeout)
     .then(()=>{
       return _this.world.helper.elementGetter(_this._root,_this._data.elements[elementName]).click()
       .then(()=>{

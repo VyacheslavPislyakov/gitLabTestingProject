@@ -36,7 +36,7 @@ var projectSettingsPage = function(world) {
 		}
 	};
 	_this.clickOn = function(elementName) {
-		return browser.wait(EC.presenceOf(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), 10000)
+		return browser.wait(EC.presenceOf(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), _this.timeout)
 			.then(() => {
 				return _this.world.helper.elementGetter(_this._root, _this._data.elements[elementName]).scrollIntoView();
 			}).then(() => {
@@ -44,7 +44,7 @@ var projectSettingsPage = function(world) {
 			});
 	};
 	_this.confirmProjectDeletion = function(projectName) {
-		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements.modalDialog)), 10000)
+		return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root, _this._data.elements.modalDialog)), _this.timeout)
 			.then(() => {
 				return _this.world.helper.elementGetter(_this._root, _this._data.elements.modalDialogInput);
 			}).then((element) => {

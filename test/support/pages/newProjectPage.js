@@ -28,21 +28,21 @@ var newProjectPage = function(world){
   };
 
   _this.fillField = function(fieldName,value){
-    return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root,_this._data.elements[fieldName])), 5000)
+    return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root,_this._data.elements[fieldName])), _this.timeout)
       .then(()=>{
         return _this.world.helper.elementGetter(_this._root,_this._data.elements[fieldName]).sendKeys(value);
       });
   };
 
   _this.setVisibility = function(){
-    return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root,_this._data.elements.internalVisibilityButton)), 5000)
+    return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root,_this._data.elements.internalVisibilityButton)), _this.timeout)
       .then(()=>{
         return _this.world.helper.elementGetter(_this._root,_this._data.elements.internalVisibilityButton).click();
       });
   };
 
   _this.clickOn = function(elementName){
-    return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root,_this._data.elements[elementName])), 5000)
+    return browser.wait(EC.elementToBeClickable(_this.world.helper.elementGetter(_this._root,_this._data.elements[elementName])), _this.timeout)
       .then(()=>{
         return _this.world.helper.elementGetter(_this._root,_this._data.elements[elementName]).click();
       });

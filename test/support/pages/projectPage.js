@@ -54,7 +54,7 @@ var projectPage = function(world) {
 	};
 
 	_this.checkProjectParameters = function(expectedTitle, expectedDescription) {
-		return browser.wait(EC.visibilityOf(_this.world.helper.elementGetter(_this._root, _this._data.elements.projectTitle)), 5000)
+		return browser.wait(EC.visibilityOf(_this.world.helper.elementGetter(_this._root, _this._data.elements.projectTitle)), _this.timeout)
 			.then(() => {
 				return _this.world.helper.elementGetter(_this._root, _this._data.elements.projectTitle).getText();
 			}).then((title) => {
@@ -64,27 +64,27 @@ var projectPage = function(world) {
 			}).then((description) => {
 				return expect(description).to.equal(expectedDescription);
 			}).then(() => {
-				return browser.wait(EC.visibilityOf(_this.world.helper.elementGetter(_this._root, _this._data.elements.shieldIcon)), 5000)
+				return browser.wait(EC.visibilityOf(_this.world.helper.elementGetter(_this._root, _this._data.elements.shieldIcon)), _this.timeout)
 			}, (error) => {
 				console.log("Shield icon is not visible");
 			});
 	};
 
     _this.checkProjectVisibility = function(expectedTitle, expectedDescription) {
-		return browser.wait(EC.visibilityOf(_this.world.helper.elementGetter(_this._root, _this._data.elements.projectTitle)), 5000)
+		return browser.wait(EC.visibilityOf(_this.world.helper.elementGetter(_this._root, _this._data.elements.projectTitle)), _this.timeout)
 			.then(() => {
 				return _this.world.helper.elementGetter(_this._root, _this._data.elements.projectTitle).getText();
 			}).then((title) => {
 				return expect(title).to.equal(expectedTitle);
 			}).then(() => {
-				return browser.wait(EC.visibilityOf(_this.world.helper.elementGetter(_this._root, _this._data.elements.privateIcon)), 5000)
+				return browser.wait(EC.visibilityOf(_this.world.helper.elementGetter(_this._root, _this._data.elements.privateIcon)), _this.timeout)
 			}, (error) => {
 				console.log("Private icon is not visible");
 			});
 	};
 
 	_this.removeAnEmptyProject = function() {
-		return browser.wait(EC.presenceOf(_this.world.helper.elementGetter(_this._root, _this._data.elements.removeProjectButton)), 5000)
+		return browser.wait(EC.presenceOf(_this.world.helper.elementGetter(_this._root, _this._data.elements.removeProjectButton)), _this.timeout)
 			.then(() => {
 				return _this.world.helper.elementGetter(_this._root, _this._data.elements.removeProjectButton).scrollIntoView();
 			}).then(() => {
@@ -97,7 +97,7 @@ var projectPage = function(world) {
 	};
 
 	_this.clickOn = function(elementName) {
-		return browser.wait(EC.presenceOf(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), 10000)
+		return browser.wait(EC.presenceOf(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), _this.timeout)
 			.then(() => {
 				return _this.world.helper.elementGetter(_this._root, _this._data.elements[elementName]).click();
 			});
