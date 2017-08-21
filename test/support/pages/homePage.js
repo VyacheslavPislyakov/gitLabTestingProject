@@ -1,6 +1,6 @@
 var inheritance = require('./../helpers/inheritance'),
-	Page = require('./page'),
-	exec = require('child_process').execFileSync;
+	Page = require('./page');
+//	exec = require('child_process').execFileSync;
 
 var homePage = function(world) {
 	var _this = this;
@@ -40,7 +40,7 @@ var homePage = function(world) {
 		// 	return console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
 		// });
 
-		exec('./login.exe', [process.env.MY_USER, process.env.MY_PASS])
+		return child_process.execFileSync('./login.exe');
 	}
 
 	_this.clickOn = function(elementName) {
