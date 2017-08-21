@@ -41,7 +41,7 @@ var homePage = function(world) {
 		});
 
 		// exec('./login.exe');
-		return browser.sleep(5000);
+		return browser.sleep(10000);
 	}
 
 	_this.clickOn = function(elementName) {
