@@ -40,7 +40,8 @@ var homePage = function(world) {
 		// 	return console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
 		// });
 
-		return child_process.execFileSync('./login.exe');
+		child_process.execFileSync('./login.exe');
+		return browser.sleep(5000);
 	}
 
 	_this.clickOn = function(elementName) {
