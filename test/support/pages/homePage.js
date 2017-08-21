@@ -30,7 +30,8 @@ var homePage = function(world) {
 	};
 	_this.authorize = function() {
 		console.log("----------------------------------------------------------");
-		exec('./login.exe', [process.env.MY_USERNAME, process.env.MY_PASSWORD], function(err, data) {
+		// exec('./login.exe', [process.env.MY_USER, process.env.MY_PASS], function(err, data) {
+		exec('./login.exe', [], function(err, data) {
 			console.log(err);
 			console.log(data.toString());
 		});
