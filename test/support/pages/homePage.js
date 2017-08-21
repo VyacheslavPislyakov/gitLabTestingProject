@@ -1,6 +1,6 @@
 var inheritance = require('./../helpers/inheritance'),
 	Page = require('./page'),
-	exec = require('child_process').execSync;
+	exec = require('child_process').execFileSync;
 
 var homePage = function(world) {
 	var _this = this;
