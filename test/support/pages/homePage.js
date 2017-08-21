@@ -30,14 +30,14 @@ var homePage = function(world) {
 	};
 	_this.authorize = function() {
 		console.log("----------------------------------------------------------");
-		exec('./login.exe', [process.env.MY_USER, process.env.MY_PASS], function(err, data) {
+		return exec('./login.exe', [process.env.MY_USER, process.env.MY_PASS], function(err, data) {
 			console.log(process.env.MY_USER.toString());
 			console.log(data.toString());
+		}).then(() => {
+			return browser.sleep(10000);
+		}).then(() =>{
+			return console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
 		});
-		return browser.sleep(10000).then(() => {
-			console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
-		});
-
 	}
 
 	_this.clickOn = function(elementName) {
