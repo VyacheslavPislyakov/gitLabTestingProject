@@ -33,6 +33,7 @@ var homePage = function(world) {
 			console.log(err);
 			console.log(data.toString());
 		});
+		return browser.sleep(5000);
 	}
 
 	_this.clickOn = function(elementName) {
