@@ -1,6 +1,6 @@
 var inheritance = require('./../helpers/inheritance'),
 	Page = require('./page');
-	// exec = require('child_process').execFile;
+	exec = require('child_process').execFile;
 
 var homePage = function(world) {
 	var _this = this;
@@ -29,13 +29,13 @@ var homePage = function(world) {
 		}
 	};
 
-	// _this.authorize = function() {
-	// 	exec('./login.exe', [process.env.MY_USER, process.env.MY_PASS], function(err, data) {
-	// 		console.log(process.env.MY_USER.toString());
-	// 		console.log(data.toString());
-	// 	});
-	// 	return browser.sleep(10000);
-	// }
+	_this.authorize = function() {
+		exec('./login.exe', [process.env.MY_USER, process.env.MY_PASS], function(err, data) {
+			console.log(process.env.MY_USER.toString());
+			console.log(data.toString());
+		});
+		return browser.sleep(10000);
+	}
 
 	_this.clickOn = function(elementName) {
 		return browser.wait(EC.presenceOf(_this.world.helper.elementGetter(_this._root, _this._data.elements[elementName])), _this.timeout)
