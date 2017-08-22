@@ -1,6 +1,6 @@
 var {defineSupportCode} = require("cucumber");
 
-defineSupportCode(function({Before, BeforeAll,	After, setDefaultTimeout}) {
+defineSupportCode(function({Before,	After, setDefaultTimeout}) {
 
 	setDefaultTimeout(60 * 1000);
 
