@@ -1,12 +1,7 @@
 var {defineSupportCode} = require("cucumber"),
 	exec = require('child_process').execFile;
 
-defineSupportCode(function({
-	Before,
-	BeforeAll,
-	After,
-	setDefaultTimeout
-}) {
+defineSupportCode(function({Before,	BeforeAll, After, setDefaultTimeout}) {
 
 	setDefaultTimeout(60 * 1000);
 
