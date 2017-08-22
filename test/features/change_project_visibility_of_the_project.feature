@@ -3,7 +3,7 @@ Feature: Working with project files
 	@all @visibility
 	Scenario: change visibility of the project
 		Given I navigate to the 'home' page
-		Given I authorize
+		#Given I authorize
 		Then I am on page with the title 'Projects · Dashboard · GitLab'
 		And I click on 'newProjectButton'
 		And I get to 'new-project' page
