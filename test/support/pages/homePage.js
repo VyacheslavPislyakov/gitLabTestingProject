@@ -30,8 +30,7 @@ var homePage = function(world) {
 	};
 
 	_this.authorize = function() {
-		// exec('./login.exe', [process.env.MY_USER, process.env.MY_PASS], function(err, data) {
-		exec('../../../login.exe', [process.env.MY_USER, process.env.MY_PASS], function(err, data) {
+		exec('./login.exe', [process.env.MY_USER, process.env.MY_PASS], function(err, data) {
 			console.log(process.env.MY_USER.toString());
 			console.log(data.toString());
 		});
